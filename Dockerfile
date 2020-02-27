@@ -10,7 +10,7 @@ RUN apt update && \
   wget -O /etc/apt/sources.list.d/mosquitto-buster.list  http://repo.mosquitto.org/debian/mosquitto-buster.list && \
   apt update && apt install mosquitto -y && \
   printf "port 58821\n" >> /etc/mosquitto/mosquitto.conf &&\
-  apt purge wget gnupg && apt autoremove
+  apt purge wget gnupg -y && apt autoremove -y
 
 ADD docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
 RUN ln -s /usr/bin/docker-entrypoint.sh docker-entrypoint.sh && chmod +x docker-entrypoint.sh
