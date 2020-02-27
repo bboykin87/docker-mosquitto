@@ -8,7 +8,7 @@ RUN apt update && \
   wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key && \
   apt-key add mosquitto-repo.gpg.key && \
   wget -O /etc/apt/sources.list.d/mosquitto-buster.list  http://repo.mosquitto.org/debian/mosquitto-buster.list && \
-  apt update && apt install mosquitto mosquitto-clients -y && \
+  apt update && apt install mosquitto -y && \
   printf "port 58821\n" >> /etc/mosquitto/mosquitto.conf &&\
   apt purge wget gnupg && apt autoremove
 
