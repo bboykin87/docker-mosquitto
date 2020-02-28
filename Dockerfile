@@ -1,7 +1,7 @@
 FROM debian:10.3-slim
 
 # Create user and group mosquitto, no home directory
-RUN useradd -system mosquitto
+RUN useradd --system mosquitto
 # Update and upgrade packages install wget and gnupg for security keys
 # Removing wget, gnupg
 RUN apt update && \
