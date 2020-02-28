@@ -18,7 +18,7 @@ jobs:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 #           IMAGE_NAME: IMAGE_NAME
-#           TAG_NAME: "v0.1"
+          TAG_NAME: "v0.1"
           LATEST: "true"
 
      
