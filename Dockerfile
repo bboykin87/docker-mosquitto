@@ -1,5 +1,7 @@
 FROM debian:10.3-slim
 
+# Create user and group mosquitto, no home directory
+RUN useradd -system mosquitto
 # Update and upgrade packages install wget and gnupg for security keys
 # Removing wget, gnupg
 RUN apt update && \
@@ -12,6 +14,7 @@ RUN apt update && \
   printf "port 58821\n" >> /etc/mosquitto/mosquitto.conf &&\
   apt purge wget gnupg -y && apt autoremove -y
 
+USER mosquitto
 ADD docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
 RUN ln -s /usr/bin/docker-entrypoint.sh docker-entrypoint.sh && chmod +x docker-entrypoint.sh
 ENTRYPOINT ["./docker-entrypoint.sh"]
