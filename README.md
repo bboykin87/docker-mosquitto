@@ -1,3 +1,5 @@
+![Docker Image mosquitto](https://github.com/bboykin87/docker-mosquitto/workflows/Docker%20Image%20mosquitto/badge.svg?branch=master)
+
 # docker-mosquitto
 
 ## V. 0.1
