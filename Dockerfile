@@ -14,9 +14,9 @@ RUN apt update && \
   printf "port 58821\n" >> /etc/mosquitto/mosquitto.conf &&\
   apt purge wget gnupg -y && apt autoremove -y
 
-USER mosquitto
 ADD docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
 RUN ln -s /usr/bin/docker-entrypoint.sh docker-entrypoint.sh && chmod +x docker-entrypoint.sh
+USER mosquitto
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["mosquitto", "-c", "/etc/mosquitto/mosquitto.conf"]
 
