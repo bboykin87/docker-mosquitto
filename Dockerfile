@@ -1,4 +1,4 @@
-FROM debian:10.6-slim
+FROM debian:10.7-slim
 
 # Update and upgrade packages install wget and gnupg for security keys
 # Removing wget, gnupg
